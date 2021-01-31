@@ -53,7 +53,7 @@ public class @InputManager : IInputActionCollection, IDisposable
                 {
                     ""name"": ""Delta Gyroscope"",
                     ""id"": ""ea7d604c-47bf-417c-8098-072f9cd0a8a6"",
-                    ""path"": ""2DVector"",
+                    ""path"": ""2DVector(mode=1)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

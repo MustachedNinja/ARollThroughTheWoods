@@ -4,14 +4,13 @@ public class CameraFollow : MonoBehaviour {
 
     [SerializeField]
     private Vector3 offset;
-    [SerializeField]
     private Transform target;
     [SerializeField]
     private float smoothSpeed = 0.125f;
 
-    // void Update() {
-    //     transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, 0, transform.rotation.eulerAngles.z);
-    // }
+    public void SetTarget(Transform target) {
+        this.target = target;
+    }
 
     void LateUpdate() {
         Vector3 desiredPosition = target.position + offset;

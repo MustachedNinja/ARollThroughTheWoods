@@ -12,7 +12,6 @@ public class LevelCompleteTrigger : MonoBehaviour
     }
 
     private void CompleteLevel() {
-        Debug.Log("LEVEL COMPLETE");
         levelCompleteUI.SetActive(true);
     }
 }

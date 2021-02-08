@@ -4,6 +4,7 @@ public class LevelCompleteTrigger : MonoBehaviour
 {
 
     [SerializeField] GameObject levelCompleteUI;
+    [SerializeField] GameObject hudUI;
 
     void OnTriggerEnter(Collider other) {
         if (other.tag == "Player") {
@@ -12,6 +13,7 @@ public class LevelCompleteTrigger : MonoBehaviour
     }
 
     private void CompleteLevel() {
+        hudUI.SetActive(false);
         levelCompleteUI.SetActive(true);
     }
 }

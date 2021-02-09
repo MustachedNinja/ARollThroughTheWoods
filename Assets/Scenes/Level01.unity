@@ -533,7 +533,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 385564895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d140d7758075a46428f2f9d71fda56dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 247425d26d66fd0479fecef24750a256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &389696252
@@ -929,6 +929,94 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &909689412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 909689414}
+  - component: {fileID: 909689413}
+  - component: {fileID: 909689415}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &909689413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909689412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd9193da0e926754c8d3ff618a044aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiltInputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1509718216}
+        m_TargetAssemblyTypeName: GroundTiltControl, Assembly-CSharp
+        m_MethodName: OnTiltInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pauseInputEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 909689415}
+        m_TargetAssemblyTypeName: PauseControl, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &909689414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909689412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909689415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909689412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec253627779b71c4aa44dc0043b8cb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 1142371775}
+  hudUI: {fileID: 174000235}
 --- !u!4 &1045489570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6435201964570526419, guid: fdcb3f9b427b11845b9a15afadd5f266, type: 3}
@@ -1545,7 +1633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509718210}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
@@ -1662,7 +1750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4936600ca031cc54fbb33cbe76238dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiltMultiplier: 0.1
+  tiltMultiplier: 0.05
   smoothSpeed: 10
   xClamp: 20
   zClamp: 20
@@ -1697,8 +1785,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1590752781}
-  - component: {fileID: 1590752780}
-  - component: {fileID: 1590752782}
   m_Layer: 0
   m_Name: PauseControl
   m_TagString: Untagged
@@ -1706,56 +1792,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1590752780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590752779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 231177a97f29c5849b129931ba66108b, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2d867744-d0ea-4ca9-910c-6296dd2f7d39
-    m_ActionName: Player/Tilt[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1590752782}
-        m_TargetAssemblyTypeName: PauseControl, Assembly-CSharp
-        m_MethodName: TogglePause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: c9671ceb-66a3-4264-afd2-08504ade1fc6
-    m_ActionName: UI/Pause[/Keyboard/escape]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!4 &1590752781
 Transform:
   m_ObjectHideFlags: 0
@@ -1770,21 +1806,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1590752782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590752779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec253627779b71c4aa44dc0043b8cb4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 1142371775}
-  hudUI: {fileID: 174000235}
-  inputAsset: {fileID: -944628639613478452, guid: 231177a97f29c5849b129931ba66108b, type: 3}
 --- !u!4 &1629153318 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7606087441043553021, guid: b289000ec4a0c1945986a45efd5bf85c, type: 3}
@@ -2055,6 +2076,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1509718217}
     m_Modifications:
+    - target: {fileID: 233625320451684225, guid: 1b9799c80b816fc4bbf09013449e866d, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 233625320451684226, guid: 1b9799c80b816fc4bbf09013449e866d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
